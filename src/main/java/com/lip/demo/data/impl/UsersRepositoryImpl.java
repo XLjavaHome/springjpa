@@ -2,13 +2,12 @@ package com.lip.demo.data.impl;
 
 import com.lip.demo.data.UsersRepository;
 import com.lip.demo.model.Users;
-import org.springframework.stereotype.Repository;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
+import org.springframework.stereotype.Repository;
 
 /**
  * @author lipeng32768@163.com
@@ -19,19 +18,17 @@ import javax.persistence.criteria.Root;
  */
 @Repository
 public class UsersRepositoryImpl extends BaseRespositoryImpl<Users> implements UsersRepository {
-
     @PersistenceContext
     EntityManager em;
 
     public Users findUserByPhoneNumber(String phoneNumber) {
-
         if (phoneNumber == null) {
             return null;
         }
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Users> criteria = cb.createQuery(Users.class);
         Root<Users> root = criteria.from(Users.class);
-        criteria.select(root).where(cb.equal(root.get("phoneNumber"),phoneNumber));
+        criteria.select(root).where(cb.equal(root.get("phoneNumber"), phoneNumber));
         try {
             return em.createQuery(criteria).getSingleResult();
         } catch (Exception e) {
@@ -40,7 +37,6 @@ public class UsersRepositoryImpl extends BaseRespositoryImpl<Users> implements U
         }
     }
 
-
     public Users findUserByName(String name) {
         if (name == null) {
             return null;
@@ -48,7 +44,7 @@ public class UsersRepositoryImpl extends BaseRespositoryImpl<Users> implements U
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Users> criteria = cb.createQuery(Users.class);
         Root<Users> root = criteria.from(Users.class);
-        criteria.select(root).where(cb.equal(root.get("name"),name));
+        criteria.select(root).where(cb.equal(root.get("name"), name));
         try {
             return em.createQuery(criteria).getSingleResult();
         } catch (Exception e) {

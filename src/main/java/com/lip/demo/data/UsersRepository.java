@@ -8,24 +8,19 @@
  * publication of such source code.                                        *
  *                                                                         *
  **************************************************************************/
-
 package com.lip.demo.data;
 
 import com.lip.demo.model.Users;
 
-/**  
-* @ClassName: UsersRepository
-* @Description: TODO 
-* @author lipeng32768@163.com
-* @date 2016年8月9日 上午4:41:15  
-* @version v1.0.0
-*/
-
+/**
+ * @author lipeng32768@163.com
+ * @version v1.0.0
+ * @ClassName: UsersRepository
+ * @Description: TODO
+ * @date 2016年8月9日 上午4:41:15
+ */
 public interface UsersRepository extends BaseRepository<Users> {
+    public Users findUserByPhoneNumber(String phoneNumber);
 
-	public Users findUserByPhoneNumber(String phoneNumber);
-
-	public Users findUserByName(String name);
-
-
+    public Users findUserByName(String name);
 }

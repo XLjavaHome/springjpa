@@ -12,31 +12,32 @@ package com.lip.demo.data;
 
 import java.util.List;
 
-/** 
-* @ClassName: BaseRepository
-* @Description: 增删改查基类
-* @author lipeng32768@163.com
-* @date 2016年8月10日 下午2:06:52  
-* @version v1.0.0
+/**
+ * @author lipeng32768@163.com
+ * @version v1.0.0
+ * @ClassName: BaseRepository
+ * @Description: 增删改查基类
+ * @date 2016年8月10日 下午2:06:52
  */
-public interface BaseRepository <T>{
-		
-		// 根据id查找
-		public T findById(Number id) ;
-		// 增加
-		public void addEntity(T entity) ;
-		// 更新
-		public void updateEntity(T entity);
-		
-		public int countEntities(List<Long> idList) ;
-		
-		public int deleteEntities(List<Long> idList);
-		
-		public void deleteEntity(T entity);
-		
-		public void deleteEntity(Number id);
-		
-		public List<T> findAllOrderedById() ;
-		
-		public void clearEntity();
+public interface BaseRepository<T> {
+    // 根据id查找
+    public T findById(Number id);
+
+    // 增加
+    public void addEntity(T entity);
+
+    // 更新
+    public void updateEntity(T entity);
+
+    public int countEntities(List<Long> idList);
+
+    public int deleteEntities(List<Long> idList);
+
+    public void deleteEntity(T entity);
+
+    public void deleteEntity(Number id);
+
+    public List<T> findAllOrderedById();
+
+    public void clearEntity();
 }

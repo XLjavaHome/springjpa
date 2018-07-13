@@ -15,53 +15,44 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<persistence version="2.1"
-             xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-             xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence"
              xsi:schemaLocation="
         http://xmlns.jcp.org/xml/ns/persistence
         http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-   <persistence-unit name="primary" >
-      <!-- If you are running in a production environment, add a managed
-         data source, this example data source is just for development and testing! -->
-      <!-- The datasource is deployed as WEB-INF/chargestation-ds.xml, you
-         can find it in the source at src/main/webapp/WEB-INF/chargestation-ds.xml -->
-       <!--<jta-data-source>dataSource</jta-data-source>-->
-       <!--<non-jta-data-source>dataSource</non-jta-data-source>-->
-       <!-- 表示JPA Repository所在的包 -->
-      <properties>
-
-         <!-- hibernate.hbm2ddl.auto= create-drop / create / update -->
-         <property name="hibernate.hbm2ddl.auto" value="update" />
-         <property name="hibernate.show_sql" value="true" />
-
-          <property name="hibernate.connection.driver_class" value= "com.mysql.jdbc.Driver"/>
-        <property name="hibernate.connection.url" value= "jdbc:mysql://localhost:3306/charge_system?useSSL=false"/>
-        <property name="hibernate.connection.username" value= "yinhe"/>
-        <property name="hibernate.connection.password" value= "yinhe2015"/>
-
-        <property name="hibernate.connection.useUnicode" value= "true"/>
-        <property name="hibernate.connection.characterEncoding" value= "UTF-8"/>
-        <property name="hibernate.format_sql" value= "true"/>
-        <property name="hibernate.use_sql_comments" value= "true"/>
-
-        <property name="hibernate.connection.autoReconnect" value= "true"/>
-        <property name="hibernate.dialect" value= "org.hibernate.dialect.MySQL5Dialect"/>
-        <property name="connection.autoReconnectForPools" value= "true"/>
-        <property name="connection.is-connection-validation-required" value= "true"/>
-
-        <property name="hibernate.c3p0.validate" value= "true"/>
-        <property name="hibernate.connection.provider_class" value= "org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider"/>
-        <property name="hibernate.c3p0.min_size" value= "5"/>
-        <property name="hibernate.c3p0.max_size" value= "600"/>
-        <property name="hibernate.c3p0.timeout" value= "1800"/>
-        <property name="hibernate.c3p0.max_statements" value= "50"/>
-        <property name="hibernate.c3p0.preferredTestQuery" value= "SELECT 1;"/>
-        <property name="hibernate.c3p0.testConnectionOnCheckout" value= "true"/>
-        <property name="hibernate.c3p0.idle_test_period" value= "3000"/>
-
-      </properties>
-
-     
-   </persistence-unit>
+    <persistence-unit name="primary">
+        <!-- If you are running in a production environment, add a managed
+           data source, this example data source is just for development and testing! -->
+        <!-- The datasource is deployed as WEB-INF/chargestation-ds.xml, you
+           can find it in the source at src/main/webapp/WEB-INF/chargestation-ds.xml -->
+        <!--<jta-data-source>dataSource</jta-data-source>-->
+        <!--<non-jta-data-source>dataSource</non-jta-data-source>-->
+        <!-- 表示JPA Repository所在的包 -->
+        <properties>
+            <!-- hibernate.hbm2ddl.auto= create-drop / create / update -->
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/charge_system?useSSL=false"/>
+            <property name="hibernate.connection.username" value="yinhe"/>
+            <property name="hibernate.connection.password" value="yinhe2015"/>
+            <property name="hibernate.connection.useUnicode" value="true"/>
+            <property name="hibernate.connection.characterEncoding" value="UTF-8"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.use_sql_comments" value="true"/>
+            <property name="hibernate.connection.autoReconnect" value="true"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
+            <property name="connection.autoReconnectForPools" value="true"/>
+            <property name="connection.is-connection-validation-required" value="true"/>
+            <property name="hibernate.c3p0.validate" value="true"/>
+            <property name="hibernate.connection.provider_class" value="org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider"/>
+            <property name="hibernate.c3p0.min_size" value="5"/>
+            <property name="hibernate.c3p0.max_size" value="600"/>
+            <property name="hibernate.c3p0.timeout" value="1800"/>
+            <property name="hibernate.c3p0.max_statements" value="50"/>
+            <property name="hibernate.c3p0.preferredTestQuery" value="SELECT 1;"/>
+            <property name="hibernate.c3p0.testConnectionOnCheckout" value="true"/>
+            <property name="hibernate.c3p0.idle_test_period" value="3000"/>
+        </properties>
+    </persistence-unit>
 </persistence>
