@@ -1,4 +1,3 @@
-use test;
 CREATE TABLE users(
 `id` int NOT NULL AUTO_INCREMENT COMMENT '用户id',
 `phone_number` varchar(25) NOT NULL UNIQUE COMMENT '手机号',
