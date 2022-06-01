@@ -8,7 +8,7 @@
   <name>springjap Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <properties>
-    <spring.version>4.3.0.RELEASE</spring.version>
+    <spring.version>5.2.22.RELEASE</spring.version>
     <hibernate.version>5.1.0.Final</hibernate.version>
     <netty.version>4.1.0.Final</netty.version>
     <servlet.version>3.1.0</servlet.version>
